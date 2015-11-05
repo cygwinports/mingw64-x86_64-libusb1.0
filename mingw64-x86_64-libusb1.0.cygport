@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libusb1.0"
-VERSION=1.0.19
+VERSION=1.0.20
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="USB library for Win64 toolchain"
@@ -11,5 +11,7 @@ As a library, it is meant to be used by developers, to facilitate the
 production of applications that communicate with USB hardware.  It is portable,
 user-mode, and supports all versions of the USB protocol."
 HOMEPAGE="http://libusb.info/"
-SRC_URI="mirror://sourceforge/libusb/libusb-${VERSION}.tar.bz2"
+SRC_URI="https://github.com/libusb/libusb/archive/v${VERSION}/libusb-v${VERSION}.tar.gz"
 SRC_DIR="libusb-${VERSION}"
+
+MAKEOPTS+=" -j1"
